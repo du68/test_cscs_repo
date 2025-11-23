@@ -7,18 +7,6 @@ from app.enums.user_role import UserRole
 
 
 def require_role(allowed_roles: list[UserRole]):
-    """
-    특정 role만 접근 가능하도록 하는 데코레이터
-
-    사용 예시:
-    @require_role([UserRole.SYSTEM_ADMIN])
-    def get_zaixun(request: Request):
-        ...
-
-    @require_role([UserRole.SYSTEM_ADMIN, UserRole.GITHUB_USER])
-    def delete_zaixun(request: Request):
-        ...
-    """
 
     def decorator(func):
         @wraps(func)
